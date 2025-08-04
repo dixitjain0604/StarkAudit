@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISMS Cyber Audit Services - Dixitkumar Jain</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .section {
+            padding: 60px 40px;
+            position: relative;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        
+        h3 {
+            color: #34495e;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .hero-section {
+            text-align: center;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 80px 40px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .credential-badge {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: bold;
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .problem-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .service-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+        
+        .service-icon {
+            font-size: 3em;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .benefit-item {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            border: 2px solid #e9ecef;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .benefit-icon {
+            color: #28a745;
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 50px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .cta-button {
+            background: #28a745;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 10px;
+            transition: background 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background: #1e7e34;
+            transform: translateY(-2px);
+        }
+        
+        .navigation {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.8);
+            padding: 15px;
+            border-radius: 10px;
+            z-index: 1000;
+        }
+        
+        .nav-link {
+            display: block;
+            color: white;
+            padding: 8px 12px;
+            margin: 5px 0;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        .nav-link:hover {
+            background: #667eea;
+        }
+        
+        .process-timeline {
+            position: relative;
+            margin: 40px 0;
+        }
+        
+        .process-step {
+            background: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        
+        .process-number {
+            background: #667eea;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .section {
+                padding: 40px 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+            }
+            
+            .problem-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .navigation {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#problem" class="nav-link">The Problem</a>
+        <a href="#solution" class="nav-link">Solution</a>
+        <a href="#why-me" class="nav-link">Why Choose Me</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#process" class="nav-link">Process</a>
+        <a href="#roi" class="nav-link">ROI</a>
+        <a href="#contact" class="nav-link">Contact</a>
+    </div>
+
+    <div class="container">
+        <!-- Home Section -->
+        <div id="home" class="section">
+            <div class="hero-section">
+                <h1>🔐 Secure Your Business Future</h1>
+                <h2>Professional ISMS Cyber Audit Services</h2>
+                <p style="font-size: 1.3em; color: #6c757d; margin: 30px 0;">Protecting Your Most Valuable Asset - Your Information</p>
+                
+                <div style="margin: 40px 0;">
+                    <div class="credential-badge">✅ IRCA Certified Auditor</div>
+                    <div class="credential-badge">🏆 ISO/IEC 27001:2022 Expert</div>
+                    <div class="credential-badge">🛡️ Vulnerability Assessment Specialist</div>
+                </div>
+                
+                <p style="font-size: 1.2em; font-weight: 600; color: #2c3e50;">
+                    <strong>Dixitkumar Dineshbhai Jain</strong><br>
+                    Associate Auditor | Membership #6197643
+                </p>
+            </div>
+        </div>
+
+        <!-- The Problem Section -->
+        <div id="problem" class="section" style="background-color: #f8f9fa;">
+            <div class="section-header">
+                <h2>🚨 The Cybersecurity Crisis</h2>
+                <p style="font-size: 1.2em; color: #6c757d;">Every business is a target in today's digital landscape</p>
+            </div>
+            
+            <div class="problem-stats">
+                <div class="stat-card">
+                    <div class="stat-number">95%</div>
+                    <p>of successful cyber attacks are due to human error</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">₹370 M</div>
+                    <p>Average cost of a data breach in 2023</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">277</div>
+                    <p>Days to identify and contain a breach</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">43%</div>
+                    <p>of cyber attacks target small businesses</p>
+                </div>
+            </div>
+            
+            <div style="background: #fff3cd; padding: 30px; border-radius: 10px; border-left: 5px solid #ffc107; margin-top: 40px;">
+                <h3>⚠️ Are You Prepared?</h3>
+                <p style="font-size: 1.1em;">Without proper ISMS implementation and regular audits, your organisation is vulnerable to:</p>
+                <ul style="margin: 20px 0; font-size: 1.1em;">
+                    <li>Data breaches and financial losses</li>
+                    <li>Regulatory compliance failures</li>
+                    <li>Reputation damage</li>
+                    <li>Operational disruptions</li>
+                    <li>Legal liabilities</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- The Solution Section -->
+        <div id="solution" class="section">
+            <div class="section-header">
+                <h2>💡 Your Security Solution</h2>
+                <p style="font-size: 1.2em; color: #6c757d;">Comprehensive ISMS auditing and cybersecurity expertise</p>
+            </div>
+            
+            <div style="background: #d1ecf1; padding: 40px; border-radius: 15px; margin-bottom: 40px;">
+                <h3>🎯 What I Deliver</h3>
+                <p style="font-size: 1.2em; margin: 20px 0;">As an IRCA-certified ISO/IEC 27001:2022 Associate Auditor, I provide end-to-end information security management solutions that protect your business and ensure compliance.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📋</div>
+                    <h3>ISO 27001:2022 Auditing</h3>
+                    <p>Comprehensive assessment of your ISMS implementation, gap analysis, and readiness evaluation for certification.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🔍</div>
+                    <h3>Vulnerability Assessment</h3>
+                    <p>Systematic identification and analysis of security weaknesses in your IT infrastructure and processes.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>Risk Management</h3>
+                    <p>Strategic risk assessment, treatment plans, and continuous monitoring frameworks.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Compliance Evaluation</h3>
+                    <p>Ensure adherence to regulatory requirements and industry standards with detailed compliance assessments.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why Choose Me Section -->
+        <div id="why-me" class="section" style="background-color: #f8f9fa;">
+            <div class="section-header">
+                <h2>🏆 Why Choose My Services</h2>
+                <p style="font-size: 1.2em; color: #6c757d;">Certified expertise meets practical experience</p>
+            </div>
+            
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <span class="benefit-icon">🎓</span>
+                    <h3>IRCA Certified</h3>
+                    <p>Official certification from the International Register of Certificated Auditors - globally recognised credentials.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <span class="benefit-icon">📋</span>
+                    <h3>ISO 27001:2022 Expert</h3>
+                    <p>Latest standard knowledge ensuring your organisation meets current best practices and requirements.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <span class="benefit-icon">🔍</span>
+                    <h3>Vulnerability Specialist</h3>
+                    <p>Extensive experience in vulnerability analysis and security assessments across various industries.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <span class="benefit-icon">🎯</span>
+                    <h3>Independent & Objective</h3>
+                    <p>Unbiased third-party assessment providing honest insights and actionable recommendations.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <span class="benefit-icon">⚡</span>
+                    <h3>Flexible Engagement</h3>
+                    <p>Tailored services to fit your timeline, budget, and specific organisational needs.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <span class="benefit-icon">📈</span>
+                    <h3>Continuous Improvement</h3>
+                    <p>Ongoing support and follow-up to ensure sustained security posture enhancement.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services Portfolio Section -->
+        <div id="services" class="section">
+            <div class="section-header">
+                <h2>🛠️ Comprehensive Service Portfolio</h2>
+                <p style="font-size: 1.2em; color: #6c757d;">End-to-end ISMS and cybersecurity solutions</p>
+            </div>
+            
+            <div style="display: grid; gap: 30px;">
+                <div style="background: linear-gradient(135deg, #74b9ff, #0984e3); color: white; padding: 40px; border-radius: 15px;">
+                    <h3>🔒 Core Audit Services</h3>
+                    <ul style="font-size: 1.1em; margin: 20px 0; line-height: 1.8;">
+                        <li>ISO/IEC 27001:2022 Internal Audits</li>
+                        <li>Pre-certification Readiness Assessment</li>
+                        <li>ISMS Implementation Review</li>
+                        <li>Security Controls Effectiveness Testing</li>
+                        <li>Risk Management Framework Evaluation</li>
+                    </ul>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, #fd79a8, #e84393); color: white; padding: 40px; border-radius: 15px;">
+                    <h3>🔍 Specialised Assessment Services</h3>
+                    <ul style="font-size: 1.1em; margin: 20px 0; line-height: 1.8;">
+                        <li>Vulnerability Assessment & Penetration Testing</li>
+                        <li>Security Architecture Review</li>
+                        <li>Incident Response Plan Evaluation</li>
+                        <li>Business Continuity Assessment</li>
+                        <li>Third-party Risk Management Review</li>
+                    </ul>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, #55efc4, #00b894); color: white; padding: 40px; border-radius: 15px;">
+                    <h3>📊 Compliance & Consulting</h3>
+                    <ul style="font-size: 1.1em; margin: 20px 0; line-height: 1.8;">
+                        <li>Regulatory Compliance Gap Analysis</li>
+                        <li>GDPR/Data Protection Assessment</li>
+                        <li>Industry Standard Alignment</li>
+                        <li>Security Policy Development</li>
+                        <li>Staff Training & Awareness Programs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Process Section -->
+        <div id="process" class="section" style="background-color: #f8f9fa;">
+            <div class="section-header">
+                <h2>🔄 My Proven Process</h2>
+                <p style="font-size: 1.2em; color: #6c757d;">Systematic approach ensuring comprehensive coverage and actionable results</p>
+            </div>
+            
+            <div class="process-timeline">
+                <div class="process-step">
+                    <span class="process-number">1</span>
+                    <h3>Initial Consultation & Scoping</h3>
+                    <p>Understanding your business context, current security posture, and specific audit requirements. Define scope, timeline, and success criteria.</p>
+                </div>
+                
+                <div class="process-step">
+                    <span class="process-number">2</span>
+                    <h3>Documentation Review</h3>
+                    <p>Comprehensive analysis of your existing ISMS documentation, policies, procedures, and risk assessments.</p>
+                </div>
+                
+                <div class="process-step">
+                    <span class="process-number">3</span>
+                    <h3>On-site/Remote Assessment</h3>
+                    <p>Detailed evaluation of security controls implementation, testing effectiveness, and interviewing key stakeholders.</p>
+                </div>
+                
+                <div class="process-step">
+                    <span class="process-number">4</span>
+                    <h3>Gap Analysis & Findings</h3>
+                    <p>Identification of non-conformities, areas for improvement, and recommendations for remediation.</p>
+                </div>
+                
+                <div class="process-step">
+                    <span class="process-number">5</span>
+                    <h3>Detailed Reporting</h3>
+                    <p>Comprehensive audit report with executive summary, detailed findings, risk ratings, and actionable recommendations.</p>
+                </div>
+                
+                <div class="process-step">
+                    <span class="process-number">6</span>
+                    <h3>Follow-up Support</h3>
+                    <p>Ongoing consultation during remediation phase and verification of corrective actions implementation.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ROI Section -->
+        <div id="roi" class="section">
+            <div class="section-header">
+                <h2>💰 Return on Investment</h2>
+                <p style="font-size: 1.2em; color: #6c757d;">Investing in security audits delivers measurable business value</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 40px 0;">
+                <div style="background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 8px 16px rgba(0,0,0,0.1);">
+                    <h3 style="color: #e74c3c;">❌ Cost of Inaction</h3>
+                    <ul style="color: #666; line-height: 1.8; margin: 20px 0;">
+                        <li>Average breach cost: ₹370 M</li>
+                        <li>Regulatory fines up to 4% revenue</li>
+                        <li>Reputation damage</li>
+                        <li>Operational downtime</li>
+                        <li>Customer loss</li>
+                        <li>Legal liabilities</li>
+                    </ul>
+                </div>
+                
+                <div style="background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 8px 16px rgba(0,0,0,0.1);">
+                    <h3 style="color: #27ae60;">✅ Value of Professional Audits</h3>
+                    <ul style="color: #666; line-height: 1.8; margin: 20px 0;">
+                        <li>Proactive risk identification</li>
+                        <li>Compliance assurance</li>
+                        <li>Reduced insurance premiums</li>
+                        <li>Enhanced customer trust</li>
+                        <li>Competitive advantage</li>
+                        <li>Improved operational efficiency</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="background: linear-gradient(135deg, #ffecd2, #fcb69f); padding: 40px; border-radius: 15px; text-align: center;">
+                <h3 style="margin-bottom: 20px;">🎯 Investment vs. Protection</h3>
+                <p style="font-size: 1.3em; font-weight: 600; color: #2c3e50;">
+                    A comprehensive ISMS audit investment of <strong>₹415,000 – ₹1,245,000</strong> 
+                    can prevent losses of <strong>millions</strong> while ensuring compliance and building trust.
+                </p>
+                <p style="font-size: 1.1em; color: #666; margin-top: 20px;">
+                    Every penny spent on cybersecurity auditing saves an average of ₹700 in potential breach costs.
+                </p>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div id="contact" class="section" style="background-color: #f8f9fa;">
+            <div class="cta-section">
+                <h2>🚀 Ready to Secure Your Future?</h2>
+                <p style="font-size: 1.3em; margin: 30px 0;">Don't wait for a security incident to realise the importance of proper ISMS implementation.</p>
+                
+                <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; margin: 40px 0;">
+                    <h3>📞 Let's Start the Conversation</h3>
+                    <p style="font-size: 1.1em; margin: 20px 0;">Contact me today for a complimentary 30-minute security consultation where we'll discuss:</p>
+                    <ul style="text-align: left; display: inline-block; margin: 20px 0;">
+                        <li>Your current security challenges</li>
+                        <li>Compliance requirements</li>
+                        <li>Audit scope and timeline</li>
+                        <li>Investment and expected outcomes</li>
+                    </ul>
+                </div>
+                
+                <div style="margin: 40px 0;">
+                    <a href="mailto:jaindixitkumar@gmail.com"><button class="cta-button">📧 Schedule Consultation</button></a>
+                    <a href="https://www.linkedin.com/in/dixit-jain-0604/"><button class="cta-button">💬 LinkedIn </button></a>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-top: 40px;">
+                    <p style="font-size: 1.1em;"><strong>Dixitkumar Dineshbhai Jain</strong></p>
+                    <p>IRCA Certified Associate Auditor | ISO/IEC 27001:2022 Specialist</p>
+                    <p>Membership #6197643 </p>
+                </div>
+                
+                <p style="font-size: 1.2em; font-weight: 600; margin-top: 30px;">
+                    🔐 Protecting Your Business, One Audit at a Time
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add animations to stat cards
+        document.querySelectorAll('.stat-card').forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+        });
+    </script>
+</body>
+</html>
